@@ -1,0 +1,43 @@
+
+<div class="container">
+
+    <form class="form-inline" action="/action_page.php">
+      <label>Gender </label>
+      <div class="checkbox">
+          <label  class="checkbox-inline"><input type="checkbox" name="gender" id="gender">M</label>
+        </div>
+        <div class="checkbox">
+         <label  class="checkbox-inline"><input type="checkbox" name="gender" id="gender">F</label>
+      </div>
+      <div class="form-group">
+          <label for="sel1">Number of results:</label>
+          <select class="form-control" id="count" name="count">
+            <option>1</option>
+            <option>2</option>
+            <option>5</option>
+            <option>10</option>
+            <option>20</option>
+          </select>
+        </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+
+  <table class="table table-responsive table-striped table-hover">
+    <tr *ngFor="let user of users">
+      <td>
+
+        <div class="card" style="width: 20rem;">
+          <img class="card-img-top" src="{{user.picture.medium}}" alt="Card image cap">
+          <div class="card-block">
+            <h4 class="card-title">{{user.name.first}} {{user.name.last}} </h4>
+            <p class="card-text">{{user.email}}</p>
+            <p class="card-text">Location: {{user.location.city}}</p>
+            <p class="card-text">Nationality: {{user.nat | nationality}}</p>
+          </div>
+        </div>
+
+      </td>
+    </tr>
+  </table>
+</div>
+
